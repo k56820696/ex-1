@@ -1,9 +1,3 @@
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -11,10 +5,18 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
-import javafx.stage.Stage;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import javafx.stage.Stage;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+
+
+
 
 // ***********************************
 //                           判断日期
@@ -74,30 +76,25 @@ public class Date extends Application {
         gridPane.add(textField3, 1, 2);
         gridPane.add(label4, 0, 3);
         gridPane.add(textField4, 1, 3);
-
         Label title = new Label("请分别输入年月日:");
         title.setAlignment(Pos.CENTER);
-
         BorderPane borderPane = new BorderPane();
-
         BorderPane.setAlignment(title, Pos.CENTER);
-
         BorderPane.setAlignment(hBox, Pos.TOP_CENTER);
-
         borderPane.setPadding(new Insets(10, 0, 20, 20));
-
         borderPane.setTop(title);
-
         borderPane.setCenter(gridPane);
-
         borderPane.setBottom(hBox);
 
         button1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 i = Integer.parseInt(textField1.getText());
+
                 j = Integer.parseInt(textField2.getText());
+
                 k = Integer.parseInt(textField3.getText());
+
 
                 try {
                     DateTimeFormatter dft = DateTimeFormatter.ofPattern("yyyy/MM/dd");
@@ -111,6 +108,7 @@ public class Date extends Application {
             }
         });
 
+
         button2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -120,7 +118,6 @@ public class Date extends Application {
                 textField4.setText("");
             }
         });
-
 
         stage.setScene(new Scene(borderPane));
         stage.setTitle("NextDate");

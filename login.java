@@ -1,9 +1,5 @@
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -12,6 +8,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -28,26 +28,18 @@ public class login extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-
         //设置标签显示内容
         Label label1=new Label("用户名");
         Label label2=new Label("密码");
-
         //设置内容的字体大小
         label1.setFont(Font.font(10));
         label2.setFont(Font.font(10));
-
-
-
         //创建文本区域
         TextField textField1 = new TextField();
         TextField textField2 = new TextField();
-
         //设置文本排列方式
         textField1.setAlignment(Pos.CENTER_RIGHT);
         textField2.setAlignment(Pos.CENTER_RIGHT);
-
-
         //创建两按钮
         Button button1 = new Button("登录");
         Button button2 = new Button("重新输入");
@@ -59,7 +51,6 @@ public class login extends Application {
         HBox hBox = new HBox();
         hBox.getChildren().addAll(button1, button2);
         HBox.setMargin(button1, new Insets(0, 20, 0, 0));
-
         //棋盘布局
         GridPane gridPane = new GridPane();
         gridPane.setGridLinesVisible(false);
@@ -78,11 +69,8 @@ public class login extends Application {
         BorderPane borderPane = new BorderPane();
 
         BorderPane.setAlignment(title, Pos.CENTER);
-
         BorderPane.setAlignment(hBox, Pos.TOP_CENTER);
-
         borderPane.setPadding(new Insets(10, 0, 20, 20));
-
         borderPane.setTop(title);
 
         borderPane.setCenter(gridPane);
@@ -97,8 +85,7 @@ public class login extends Application {
 
                 if (userID.matches("^[a-zA-Z]\\w{5,9}") && password.matches("\\d{6}")) {
                     createStage("用户合法");
-                }
-                else {
+                }else {
                     createStage("用户不合法");
                 }
             }
